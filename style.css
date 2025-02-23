@@ -107,7 +107,7 @@ nav a.active {
         transform: translateY(0);
     }
     100% {
-        transform: translateY(-100%);
+        transform: translateY(-150%);
     }
 }
 
@@ -118,7 +118,7 @@ nav a.active {
 
 @keyframes show-bars {
     0% {
-        transform: translateY(-100%);
+        transform: translateY(-150%);
     }
     100% {
         transform: translateY(0);
