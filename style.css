@@ -917,12 +917,3 @@ section.active {
     background: #f44336;
     color: white;
 }
-
-@keyframes slideIn {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
