@@ -11,7 +11,6 @@ menuIcon.addEventListener('click', () => {
 
 const activePage = () => {
     const header = document.querySelector('header');
-    const barsBox = document.querySelector('.bars-box');
 
     header.classList.remove('active');
     setTimeout(() => {
@@ -21,11 +20,6 @@ const activePage = () => {
     navLinks.forEach(link => {
         link.classList.remove('active');
     });
-
-    barsBox.classList.remove('active');
-    setTimeout(() => {
-        barsBox.classList.add('active');
-    }, 1100);
 
     sections.forEach(section => {
         section.classList.remove('active');
