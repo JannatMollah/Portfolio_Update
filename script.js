@@ -121,3 +121,21 @@ arrowLeft.addEventListener('click', () => {
 
     activePortfolio();
 });
+
+// Show/hide alerts
+function showAlert(type) {
+    const alerts = document.querySelectorAll('.alert');
+    alerts.forEach(alert => alert.style.display = 'none');
+    
+    const alert = document.querySelector(`.${type}`);
+    if(alert) {
+        alert.style.display = 'block';
+        setTimeout(() => {
+            alert.style.display = 'none';
+        }, 5000);
+    }
+}
+
+// In your form submission handler
+// On success: showAlert('success')
+// On error: showAlert('error')

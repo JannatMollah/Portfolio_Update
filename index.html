@@ -427,14 +427,21 @@
                 <form action="https://formspree.io/f/xjkgdvay" method="POST">
                     <h2 class="heading">Contact <span>Me!</span></h2>
                     <div class="field-box">
-                        <input type="text" placeholder="Full Name" required>
-                        <input type="email" placeholder="Email Address" required>
-                        <input type="text" placeholder="Phone Number" required>
-                        <input type="text" placeholder="Email Subject" required>
-                        <textarea name="" id="" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
+                        <input type="text" name="name" placeholder="Full Name" required>
+                        <input type="email" name="email" placeholder="Email Address" required>
+                        <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{11}" required>
+                        <input type="text" name="subject" placeholder="Email Subject" required>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                      </div>
+                      <button type="submit" class="btn">Send Message</button>
                 </form>
+
+                <!-- Add Alert Box HERE -->
+                <div class="alert-box">
+                    <div class="alert success">Message sent successfully! 🎉</div>
+                    <div class="alert error">Failed to send message. Please try again. ❌</div>
+                </div>
+                <!-- End of Alert Box -->
             </div>
         </div>
     </section>
