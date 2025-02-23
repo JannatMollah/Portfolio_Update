@@ -121,3 +121,39 @@ arrowLeft.addEventListener('click', () => {
 
     activePortfolio();
 });
+
+// Contact Form Submission
+const form = document.querySelector('form');
+const alertSuccess = document.querySelector('.alert.success');
+const alertError = document.querySelector('.alert.error');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const formData = new FormData(form);
+  
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      alertSuccess.style.display = 'block';
+      form.reset();
+      setTimeout(() => {
+        alertSuccess.style.display = 'none';
+      }, 5000);
+    } else {
+      throw new Error('Form submission failed');
+    }
+  } catch (error) {
+    alertError.style.display = 'block';
+    setTimeout(() => {
+      alertError.style.display = 'none';
+    }, 5000);
+  }
+});
