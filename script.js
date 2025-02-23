@@ -11,6 +11,7 @@ menuIcon.addEventListener('click', () => {
 
 const activePage = () => {
     const header = document.querySelector('header');
+    const barsBox = document.querySelector('.bars-box');
 
     header.classList.remove('active');
     setTimeout(() => {
@@ -20,6 +21,11 @@ const activePage = () => {
     navLinks.forEach(link => {
         link.classList.remove('active');
     });
+
+    barsBox.classList.remove('active');
+    setTimeout(() => {
+        barsBox.classList.add('active');
+    }, 1100);
 
     sections.forEach(section => {
         section.classList.remove('active');
@@ -115,21 +121,3 @@ arrowLeft.addEventListener('click', () => {
 
     activePortfolio();
 });
-
-// Show/hide alerts
-function showAlert(type) {
-    const alerts = document.querySelectorAll('.alert');
-    alerts.forEach(alert => alert.style.display = 'none');
-    
-    const alert = document.querySelector(`.${type}`);
-    if(alert) {
-        alert.style.display = 'block';
-        setTimeout(() => {
-            alert.style.display = 'none';
-        }, 5000);
-    }
-}
-
-// In your form submission handler
-// On success: showAlert('success')
-// On error: showAlert('error')
